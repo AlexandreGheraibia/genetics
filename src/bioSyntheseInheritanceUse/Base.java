@@ -12,7 +12,6 @@ public class Base {
     private void initBaseElement(String symbol){
         this.symbol=symbol;
         switch(symbol){
-
             case "A":
                 this.name="adénine";
                 this.family="purine";

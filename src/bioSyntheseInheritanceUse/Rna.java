@@ -2,7 +2,6 @@ package bioSyntheseInheritanceUse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 //est un Strand
 public class Rna extends Strand {
@@ -72,13 +71,20 @@ public class Rna extends Strand {
         int tripletNB=this.getNucleoAcideList().size()/3;
         String codon;
         ArrayList<AminoAcid> protein=new ArrayList<>();
-        for(int i=0;i<tripletNB;i++){
+        int i=0;
+        boolean fin=false;
+        while(i<tripletNB&&!fin){
             codon="";
             for(int j=0;j<3;j++){
                 codon+=this.getNucleoAcideList().get(i*3+j).getSymbol();
             }
-
-            protein.add(codonToAminoAcid(codon));
+            AminoAcid a=codonToAminoAcid(codon);
+            if(!a.getName().equals("stop"))
+                 protein.add(a);
+            else{
+                fin=true;
+            }
+            i++;
         }
         return protein;
     }

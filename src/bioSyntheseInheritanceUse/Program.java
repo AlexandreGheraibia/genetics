@@ -1,5 +1,7 @@
 package bioSyntheseInheritanceUse;
 
+import java.util.ArrayList;
+
 public class Program {
     static final String RED_COLOR_CODE = "\u001B[31m";
     static final String RESET_CODE = "\u001B[0m";
@@ -15,7 +17,7 @@ public class Program {
     }
 
     public static void main(String[] Arg){
-        String seqSymbol="ACGTCCGGTATT";
+        String seqSymbol="ACGTCCGGTATTTAAUUTCGT";
         Strand strand=new Strand("U"+seqSymbol+"U");
         testsDisplay("test strand generation ",strand);
         strand=new Dna(seqSymbol);
@@ -25,20 +27,30 @@ public class Program {
         //System.out.println(d.transcriptioh());
         strand=(((Dna)strand).transcriptioh());
         testsDisplay("test Rna generation",strand);
+        ArrayList<AminoAcid>aminoAcidList;
+        aminoAcidList=((Rna)strand).traduction();
+        affiche("display pseudo protein ");
+        System.out.println(aminoAcidList);
+
+
         /*
         test strand generation
-        nucleo acid:	UACGTCCGGTATTU
-        type:	brin
+        nucleo acid:	UACGTCCGGTATTTAAUUTCGTU
+        type:	Brin
         test Dna generation
-        nucleo acid:	ACGTCCGGTATT
+        nucleo acid:	ACGTCCGGTATTTAAUUTCGT
         type:	Dna
         test Dna compl generation
-        nucleo acid:	TGCAGGCCATAA
-        type:	brin
+        nucleo acid:	TGCAGGCCATAAATTCCAGCA
+        type:	Brin
         test Rna generation
-        nucleo acid:	ACGUCCGGUAUU
+        nucleo acid:	ACGUCCGGUAUUUAAUUUCGU
         type:	Rna
+        display pseudo protein 
+        [théonine, sérine, glycine, isoleucine]
+
         Process finished with exit code 0
+
         * */
 
     }

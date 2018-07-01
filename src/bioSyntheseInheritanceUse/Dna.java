@@ -8,8 +8,10 @@ public class Dna extends Strand {
     }
 
     public Dna(String seqSymbol){
-        super(seqSymbol,"Dna");
+            super(seqSymbol,"Dna");
     }
+
+
 
     public Rna transcriptioh(){
         Rna rna=new Rna();

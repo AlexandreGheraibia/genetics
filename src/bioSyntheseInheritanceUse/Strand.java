@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 //Class A
 public class Strand {
-    private String type="brin";
+    private String type="Brin";
     //Classe C
     private ArrayList<Base> nucleoAcideList=new ArrayList<>();
 
@@ -28,9 +28,7 @@ public class Strand {
     }
 
     public Strand(String seqSymbol){
-
         generateAcid(seqSymbol);
-
     }
 
     public Strand(String seqSymbol,String type){
@@ -50,11 +48,18 @@ public class Strand {
     public void generateAcid(String seqSymbol){
 
         for(Character c : seqSymbol.toCharArray()){
-            if(c=='U'||c=='A'||c=='C'||c=='T'||c=='G'){
-                nucleoAcideList.add(new Base(String.valueOf(c)));
-            }
-            else
-                System.err.println("the symbol isn't a base element");
+                if(c=='U'||c=='A'||c=='C'||c=='T'||c=='G'){
+                    if((this.getType()=="Rna"&&c!='T')||(this.getType()=="Dna"&&c!='U')||(this.getType()=="Brin")){
+                        nucleoAcideList.add(new Base(String.valueOf(c)));
+                    }
+                    else{
+                        System.err.println("the symbol "+c+" can't contained by a "+this.getType());
+                    }
+                }
+                else{
+                    System.err.println("the symbol isn't a base element");
+
+                }
         }
     }
     public String toString(){

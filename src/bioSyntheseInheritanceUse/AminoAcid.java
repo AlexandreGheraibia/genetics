@@ -1,6 +1,7 @@
 package bioSyntheseInheritanceUse;
 
 public class AminoAcid {
+
     private String name;
 
     private String formule;
@@ -23,8 +24,14 @@ public class AminoAcid {
     public AminoAcid(){
 
     }
+
     public AminoAcid(String name){
         this.setName(name);
 
+    }
+
+    @Override
+    public String toString() {
+        return getName();
     }
 }
