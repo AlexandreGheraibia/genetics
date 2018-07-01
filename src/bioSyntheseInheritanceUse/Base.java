@@ -71,7 +71,9 @@ public class Base {
     public boolean isUracile(){
         return this.symbol.equals("U");
     }
-
+    public String getSymbol(){
+        return this.symbol;
+    }
     public String toString(){
         String color="\u001B[32m";
         String colorReset="\u001B[0m";
