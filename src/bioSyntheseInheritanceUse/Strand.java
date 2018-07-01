@@ -1,4 +1,4 @@
-package bioSynthese;
+package bioSyntheseInheritanceUse;
 
 
 import java.util.ArrayList;

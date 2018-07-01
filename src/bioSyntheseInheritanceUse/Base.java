@@ -1,4 +1,4 @@
-package bioSynthese;
+package bioSyntheseInheritanceUse;
 
 public class Base {
 

@@ -1,4 +1,4 @@
-package bioSynthese;
+package bioSyntheseInheritanceUse;
 
 //est un Strand
 public class Dna extends Strand {

@@ -1,4 +1,4 @@
-package bioSynthese;
+package bioSyntheseInheritanceUse;
 
 public class Program {
     static final String RED_COLOR_CODE = "\u001B[31m";
