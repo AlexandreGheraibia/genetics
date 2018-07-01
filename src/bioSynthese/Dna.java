@@ -4,6 +4,7 @@ package bioSynthese;
 public class Dna extends Strand {
     //a un milieu
     public Dna(){
+        this.setType("Dna");
     }
 
     public Dna(String seqSymbol){

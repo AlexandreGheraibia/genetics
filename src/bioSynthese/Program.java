@@ -25,6 +25,21 @@ public class Program {
         //System.out.println(d.transcriptioh());
         strand=(((Dna)strand).transcriptioh());
         testsDisplay("test Rna generation",strand);
+        /*
+        test strand generation
+        nucleo acid:	UACGTCCGGTATTU
+        type:	brin
+        test Dna generation
+        nucleo acid:	ACGTCCGGTATT
+        type:	Dna
+        test Dna compl generation
+        nucleo acid:	TGCAGGCCATAA
+        type:	brin
+        test Rna generation
+        nucleo acid:	ACGUCCGGUAUU
+        type:	Rna
+        Process finished with exit code 0
+        * */
 
     }
 }

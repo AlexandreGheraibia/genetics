@@ -7,7 +7,7 @@ public class Rna extends Strand {
     //a un milieu
 
     public Rna(){
-
+        this.setType("Rna");
 
     }
     public Rna(String seqSymbol){
