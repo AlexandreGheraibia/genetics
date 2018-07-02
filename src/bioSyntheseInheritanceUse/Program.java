@@ -46,7 +46,7 @@ public class Program {
         test Rna generation
         nucleo acid:	ACGUCCGGUAUUUAAUUUCGU
         type:	Rna
-        display pseudo protein 
+        display pseudo protein
         [théonine, sérine, glycine, isoleucine]
 
         Process finished with exit code 0
