@@ -12,7 +12,6 @@ public class Dna extends Strand {
     }
 
 
-
     public Rna transcriptioh(){
         Rna rna=new Rna();
         for(Base elem:this.getNucleoAcideList()){

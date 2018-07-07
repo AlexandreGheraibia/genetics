@@ -3,9 +3,13 @@ package bioSyntheseInheritanceUse;
 public class AminoAcid {
 
     private String name;
-
+    private String symbol;
     private String formule;
+    private String trigram;
 
+    public String getSymbol() {
+        return symbol;
+    }
     public String getName() {
         return name;
     }
@@ -21,17 +25,24 @@ public class AminoAcid {
     public void setFormule(String formule) {
         this.formule = formule;
     }
+
     public AminoAcid(){
 
     }
 
-    public AminoAcid(String name){
-        this.setName(name);
-
+    public AminoAcid(String symbol,String trigram){
+        this.symbol=symbol;
+        this.name=Ribosome.getAminoName(symbol);
+        this.trigram = trigram;
     }
 
     @Override
     public String toString() {
-        return getName();
+        return getSymbol()+"("+getTrigram()+")";
+    }
+
+
+    public String getTrigram() {
+        return trigram;
     }
 }

@@ -4,17 +4,19 @@ package bioSyntheseInheritanceUse;
 import java.util.ArrayList;
 
 //Class A
-public class Strand {
-    private String type="Brin";
+public  class Strand {
+    private String type;
     //Classe C
     private ArrayList<Base> nucleoAcideList=new ArrayList<>();
 
     public String getType(){
         return this.type;
     }
+
     public void setType(String type){
         this.type=type;
     }
+
     public ArrayList<Base> getNucleoAcideList() {
         return nucleoAcideList;
     }
@@ -62,6 +64,7 @@ public class Strand {
                 }
         }
     }
+
     public String toString(){
         String color="\u001B[31m";
         String colorReset="\u001B[0m";
