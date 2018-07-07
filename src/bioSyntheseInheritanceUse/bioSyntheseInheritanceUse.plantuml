@@ -5,7 +5,10 @@ title __BIOSYNTHESEINHERITANCEUSE's Class Diagram__\n
   package bioSyntheseInheritanceUse {
     class AminoAcid {
         - name : String
+        - symbol : String
         - formule : String
+        - trigram : String
+        + getSymbol()
         + getName()
         + setName()
         + getFormule()
@@ -13,6 +16,7 @@ title __BIOSYNTHESEINHERITANCEUSE's Class Diagram__\n
         + AminoAcid()
         + AminoAcid()
         + toString()
+        + getTrigram()
     }
   }
   
@@ -40,8 +44,23 @@ title __BIOSYNTHESEINHERITANCEUSE's Class Diagram__\n
     class Dna {
         + Dna()
         + Dna()
-        + transcriptioh()
         + getComplStrand()
+    }
+  }
+  
+
+  package bioSyntheseInheritanceUse {
+    class DnaRepository {
+        + load()
+        + getDna()
+    }
+  }
+  
+
+  package bioSyntheseInheritanceUse {
+    class Enzyme {
+        + Enzyme()
+        + transcriptioh()
     }
   }
   
@@ -58,32 +77,51 @@ title __BIOSYNTHESEINHERITANCEUSE's Class Diagram__\n
   
 
   package bioSyntheseInheritanceUse {
-    class Rna {
-        {static} + aminoAcidMap : HashMap<String, String>
+    class Protein {
+        - chain : ArrayList<AminoAcid>
+        ~ Protein()
+        ~ Protein()
+        ~ factory()
+        + toString()
+        + getChain()
+    }
+  }
+  
+
+  package bioSyntheseInheritanceUse {
+    class Ribosome {
+        {static} + codonMap : HashMap<String, String>
+        {static} + couple : HashMap<String, String>
         {static} - aminoMapExist : boolean
-        {static} - getARminoMapExist()
+        {static} - coupleExist : boolean
+        {static} + isTheEnd()
+        {static} - getAminoMapExist()
+        {static} - getAminoNameExist()
+        {static} - initAminoName()
+        {static} + getAminoName()
         {static} - initAminoMap()
         + codonToAminoAcid()
-        + Rna()
-        + Rna()
-        + Rna()
         + traduction()
     }
   }
   
 
   package bioSyntheseInheritanceUse {
-    class Strand {
+    class Rna {
+        + Rna()
+    }
+  }
+  
+
+  package bioSyntheseInheritanceUse {
+    abstract class Strand {
         - type : String
         - nucleoAcideList : ArrayList<Base>
         + getType()
         + setType()
         + getNucleoAcideList()
         + setNucleoAcideList()
-        + Strand()
-        + Strand()
-        + Strand()
-        + Strand()
+        ~ Strand()
         + Strand()
         + generateAcid()
         + toString()
@@ -92,6 +130,7 @@ title __BIOSYNTHESEINHERITANCEUSE's Class Diagram__\n
   
 
   Dna -up-|> Strand
+  DnaRepository o-- Dna : dna
   Rna -up-|> Strand
 
 

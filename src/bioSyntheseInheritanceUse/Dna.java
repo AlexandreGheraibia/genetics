@@ -12,20 +12,6 @@ public class Dna extends Strand {
 
     }
 
-
-    public Rna transcriptioh(){
-        Rna rna=new Rna();
-        for(Base elem:this.getNucleoAcideList()){
-            if(elem.isThymine()){
-                rna.getNucleoAcideList().add(new Base("U"));
-            }
-            else{
-                rna.getNucleoAcideList().add(elem);
-            }
-        }
-        return rna;
-    }
-
     public Strand getComplStrand(){
         Strand strand=new Dna();
         for(int i=0;i<this.getNucleoAcideList().size();i++) {

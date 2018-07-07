@@ -9,23 +9,24 @@ public class Protein {
     Protein(){
 
     }
+
     Protein(ArrayList<AminoAcid>chain){
         this.chain=chain;
     }
-    ArrayList<Protein>factory(ArrayList<AminoAcid>aminoAcidList){
+    ArrayList<Protein>factory(Protein protein){
         ArrayList<Protein>proteinList=new ArrayList<>();
-        Protein protein=new Protein();
-        for(AminoAcid proCur:aminoAcidList){
+        Protein accu=new Protein();
+        for(AminoAcid proCur:protein.getChain()){
             if(Ribosome.isTheEnd(proCur)){
-                if(protein.getChain().size()>0){
-                    proteinList.add(protein);
-                    protein=new Protein();
+                if(accu.getChain().size()>0){
+                    proteinList.add(accu);
+                    accu=new Protein();
 
                 }
 
             }
             else{
-                protein.getChain().add(proCur);
+               accu.getChain().add(proCur);
             }
         }
        return proteinList;

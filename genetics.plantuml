@@ -21,7 +21,31 @@ title __GENETICS's Class Diagram__\n
   
 
   package bioSyntheseInheritanceUse {
+    class DnaRepository {
+    }
+  }
+  
+
+  package bioSyntheseInheritanceUse {
+    class Enzyme {
+    }
+  }
+  
+
+  package bioSyntheseInheritanceUse {
     class Program {
+    }
+  }
+  
+
+  package bioSyntheseInheritanceUse {
+    class Protein {
+    }
+  }
+  
+
+  package bioSyntheseInheritanceUse {
+    class Ribosome {
     }
   }
   
@@ -33,12 +57,13 @@ title __GENETICS's Class Diagram__\n
   
 
   package bioSyntheseInheritanceUse {
-    class Strand {
+    abstract class Strand {
     }
   }
   
 
   Dna -up-|> Strand
+  DnaRepository o-- Dna : dna
   Rna -up-|> Strand
 
 

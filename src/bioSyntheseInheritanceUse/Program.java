@@ -22,15 +22,15 @@ public class Program {
             DnaRepository repDna=new DnaRepository();
             repDna.load("dna.txt");
             Dna dnaStrand=repDna.getDna();
+            Enzyme arnPolymerase=new Enzyme();
             testsDisplay("test repositoryDna",dnaStrand);
-            testsDisplay("test dna apariz",dnaStrand.getComplStrand());
-
+            testsDisplay("test dna apariz", arnPolymerase.transcriptioh(dnaStrand));
             Ribosome ribosome=new Ribosome();
             ArrayList<Protein>proteinList;
 
-            Protein protein=new Protein(ribosome.traduction(dnaStrand.transcriptioh()));
+            Protein protein=new Protein(ribosome.traduction(arnPolymerase.transcriptioh(dnaStrand)));
             //System.out.print(protein);
-            proteinList=protein.factory(protein.getChain());
+            proteinList=protein.factory(protein);
             for(Protein proCur:proteinList){
                 System.out.println(proCur);
             }

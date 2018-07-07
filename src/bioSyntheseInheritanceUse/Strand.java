@@ -33,15 +33,15 @@ public abstract class Strand {
         this.generateAcid(seqSymbol);
         this.type=type;
     }
-  /*  public Strand(ArrayList<Base> baseList){
+ /*  public Strand(ArrayList<Base> baseList){
         this.setNucleoAcideList(baseList);
     }
 
     public Strand(ArrayList<Base> baseList,String type){
         this(baseList);
         this.type=type;
-    }
-    */
+    }*/
+
     public void generateAcid(String seqSymbol){
 
         for(Character c : seqSymbol.toCharArray()){
