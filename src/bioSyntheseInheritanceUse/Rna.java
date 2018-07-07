@@ -10,11 +10,11 @@ public class Rna extends Strand {
         this.setType("Rna");
 
     }
-   public Rna(String seqSymbol){
+  /* public Rna(String seqSymbol){
         super(seqSymbol,"Rna");
     }
     public Rna(ArrayList<Base> seqBaseList){
         super(seqBaseList,"Rna");
     }
-
+**/
 }
