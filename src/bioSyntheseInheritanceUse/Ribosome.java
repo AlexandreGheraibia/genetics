@@ -136,7 +136,7 @@ public class Ribosome {
             for(int j=0;j<3;j++){
                 codon+=rna.getNucleoAcideList().get(i*3+j).getSymbol();
             }
-            //System.out.println("codon:"+codon+"*");
+
             AminoAcid a;
             a = codonToAminoAcid(codon);
             protein.add(a);

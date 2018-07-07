@@ -33,13 +33,8 @@ public class Protein {
 
     public String toString(){
         String str="";
-        int i=0;
         for(AminoAcid elem:getChain()){
-            str+=elem+" ";
-            if(i%10==0){
-                str+=elem+"\n";
-            }
-                i++;
+            str+=elem;
         }
         return str;
     }

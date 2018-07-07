@@ -32,7 +32,7 @@ public class Program {
             //System.out.print(protein);
             proteinList=protein.factory(protein.getChain());
             for(Protein proCur:proteinList){
-                //System.out.println(proCur);
+                System.out.println(proCur);
             }
 
 

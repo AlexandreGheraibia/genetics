@@ -4,7 +4,7 @@ package bioSyntheseInheritanceUse;
 import java.util.ArrayList;
 
 //Class A
-public  class Strand {
+public abstract class Strand {
     private String type;
     //Classe C
     private ArrayList<Base> nucleoAcideList=new ArrayList<>();
@@ -25,19 +25,14 @@ public  class Strand {
         this.nucleoAcideList = nucleoAcideList;
     }
 
-    public Strand(){
-
-    }
-
-    public Strand(String seqSymbol){
-        generateAcid(seqSymbol);
+    Strand(){
+        this.type="Brin";
     }
 
     public Strand(String seqSymbol,String type){
-        this(seqSymbol);
+        this.generateAcid(seqSymbol);
         this.type=type;
     }
-
     public Strand(ArrayList<Base> baseList){
         this.setNucleoAcideList(baseList);
     }

@@ -8,7 +8,8 @@ public class Dna extends Strand {
     }
 
     public Dna(String seqSymbol){
-            super(seqSymbol,"Dna");
+        super(seqSymbol,"Dna");
+
     }
 
 
@@ -26,7 +27,7 @@ public class Dna extends Strand {
     }
 
     public Strand getComplStrand(){
-        Strand strand=new Strand();
+        Strand strand=new Dna();
         for(int i=0;i<this.getNucleoAcideList().size();i++) {
             strand.getNucleoAcideList().add(this.getNucleoAcideList().get(i).compl());
         }
